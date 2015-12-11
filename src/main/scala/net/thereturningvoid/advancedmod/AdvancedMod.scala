@@ -3,6 +3,7 @@ package net.thereturningvoid.advancedmod
 import cpw.mods.fml.common.{SidedProxy, Mod}
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}
+import net.thereturningvoid.advancedmod.init.ModBlocks
 import net.thereturningvoid.advancedmod.proxies.CommonProxy
 import net.thereturningvoid.advancedmod.reference.Reference._
 import net.thereturningvoid.advancedmod.util.Logger
@@ -16,6 +17,7 @@ object AdvancedMod {
   @EventHandler
   def preInit(e: FMLPreInitializationEvent): Unit = {
     proxy.preInit()
+    ModBlocks.init()
     Logger.info("Pre-init complete!")
   }
 
